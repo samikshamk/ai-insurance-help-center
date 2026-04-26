@@ -19,9 +19,9 @@ const Menu: MenuItem[] = [
     index: true,
   },
   {
-    path: "/chat",
-    name: "Chat",
-    element: <Chat />,
+    path: "/topics",
+    name: "Topics",
+    element: <Topics />
   },
   {
     path: "/questions",
@@ -29,9 +29,9 @@ const Menu: MenuItem[] = [
     element: <Questions />
   },
   {
-    path: "/topics",
-    name: "Topics",
-    element: <Topics />
+    path: "/chat",
+    name: "AI Assistant",
+    element: <Chat />,
   },
 ];
 

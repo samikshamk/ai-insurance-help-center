@@ -1,8 +1,14 @@
-import React from 'react'
+import Banner from "../Components/Layout/Banner"
+import Questions from "../Components/Layout/Home/Questions"
+import Topics from "../Components/Layout/Home/Topics"
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+      <Banner />
+      <Topics />
+      <Questions />
+    </>
   )
 }
 
