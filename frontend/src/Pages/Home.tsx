@@ -1,6 +1,6 @@
-import Banner from "../Components/Layout/Banner"
-import Questions from "../Components/Layout/Home/Questions"
-import Topics from "../Components/Layout/Home/Topics"
+import Banner from "../components/Layout/Banner"
+import Questions from "../components/Layout/Home/Questions"
+import Topics from "../components/Layout/Home/Topics"
 
 const Home = () => {
   return (

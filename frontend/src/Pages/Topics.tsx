@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Sidebar from "../Components/UI/Sidebar/Sidebar";
-import Drawer from "../Components/UI/Sidebar/Drawer";
-import MobileTopBar from "../Components/UI/Sidebar/MobileTopBar";
-import List from "../Components/Layout/Topics/List";
+import Sidebar from "../components/UI/Sidebar/Sidebar";
+import Drawer from "../components/UI/Sidebar/Drawer";
+import MobileTopBar from "../components/UI/Sidebar/MobileTopBar";
+import List from "../components/Layout/Topics/List";
 import { topics } from "../data/Topics/index";
 
 export default function TopicsPage() {

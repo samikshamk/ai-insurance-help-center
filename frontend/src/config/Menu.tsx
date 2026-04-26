@@ -1,8 +1,8 @@
 import type { ReactNode } from "react"; 
-import Home from "../Pages/Home";
-import Chat from "../Pages/Chat";
-import Questions from "../Pages/Questions";
-import Topics from "../Pages/Topics";
+import Home from "../pages/Home";
+import Chat from "../pages/Chat";
+import Questions from "../pages/Questions";
+import Topics from "../pages/Topics";
 
 export type MenuItem = {
   path: string;
