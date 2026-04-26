@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"; 
 import Home from "../Pages/Home";
-import AiAssistance from "../Pages/AiAssistance";
+import Chat from "../Pages/Chat";
 import Questions from "../Pages/Questions";
 import Topics from "../Pages/Topics";
 
@@ -19,9 +19,9 @@ const Menu: MenuItem[] = [
     index: true,
   },
   {
-    path: "/ai-assistance",
-    name: "AiAssistance",
-    element: <AiAssistance />,
+    path: "/chat",
+    name: "Chat",
+    element: <Chat />,
   },
   {
     path: "/questions",
