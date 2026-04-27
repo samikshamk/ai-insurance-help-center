@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Menu from "./config/Menu";
 import Navbar from "./components/Layout/Navbar";
-import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   return (

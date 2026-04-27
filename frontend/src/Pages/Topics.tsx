@@ -4,9 +4,17 @@ import Drawer from "../components/UI/Sidebar/Drawer";
 import MobileTopBar from "../components/UI/Sidebar/MobileTopBar";
 import List from "../components/Layout/Topics/List";
 import { topics } from "../data/Topics/index";
+import { useParams, useNavigate } from 'react-router-dom';
+
+type ParamTypes = {
+  category?: string;
+};
 
 export default function TopicsPage() {
-  const [activeTopic, setActiveTopic] = useState<string>("claims");
+  let { category } = useParams<ParamTypes>();
+  const navigate = useNavigate();
+
+  const [activeTopic, setActiveTopic] = useState<string>(category || "claims");
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
 
   const activeTopicObj = topics.find((t) => t.id === activeTopic);
@@ -16,6 +24,7 @@ export default function TopicsPage() {
   const handleSelect = (id: string) => {
     setActiveTopic(id);
     setDrawerOpen(false);
+    navigate(`/topics/${id}`);
   };
 
   return (
@@ -25,7 +34,7 @@ export default function TopicsPage() {
       <Sidebar
         topics={topics}
         activeTopic={activeTopic}
-        onSelect={setActiveTopic}
+        onSelect={handleSelect}
       />
 
       {/* Main content */}

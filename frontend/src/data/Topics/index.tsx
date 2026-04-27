@@ -98,7 +98,7 @@ export const topics: Topic[] = [
     ],
   },
   {
-    id: "travel",
+    id: "travel-insurance",
     label: "Travel Insurance",
     icon: <Plane size={18} />,
     subcategories: [
@@ -134,7 +134,7 @@ export const topics: Topic[] = [
     ],
   },
   {
-    id: "billing",
+    id: "billing-payments",
     label: "Billing & Payments",
     icon: <CreditCard size={18} />,
     subcategories: [
@@ -202,7 +202,7 @@ export const topics: Topic[] = [
     ],
   },
   {
-    id: "account",
+    id: "account-profile",
     label: "Account & Profile",
     icon: <User size={18} />,
     subcategories: [

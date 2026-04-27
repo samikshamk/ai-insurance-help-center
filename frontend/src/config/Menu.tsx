@@ -8,28 +8,33 @@ export type MenuItem = {
   path: string;
   name: string;
   element: ReactNode;
+  href: string;
   index?: boolean;
 };
 
 const Menu: MenuItem[] = [
       {
     path: "/",
+    href: "/",
     name: "Home",
     element: <Home />,
     index: true,
   },
   {
-    path: "/topics",
+    path: "/topics/:category?",
+    href: "/topics",
     name: "Topics",
     element: <Topics />
   },
   {
-    path: "/questions",
+    path: "/questions/:question?",
+    href: "/questions",
     name: "Questions",
     element: <Questions />
   },
   {
     path: "/ai-assistant",
+    href: "/ai-assistant",
     name: "AI Assistant",
     element: <Assistant />,
   },

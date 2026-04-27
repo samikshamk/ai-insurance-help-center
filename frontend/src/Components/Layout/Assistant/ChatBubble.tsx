@@ -1,4 +1,4 @@
-import type { Message } from "../../types/assistant";
+import type { Message } from "../../../types/assistant";
 import Avatar from "../../UI/Avatar";
 
 interface ChatBubbleProps {
@@ -18,7 +18,9 @@ export default function ChatBubble({ message }: ChatBubbleProps) {
       )}
 
       {/* Bubble */}
-      <div className={`max-w-[75%] ${isUser ? "items-end" : "items-start"} flex flex-col gap-1`}>
+      <div
+        className={`max-w-[75%] ${isUser ? "items-end" : "items-start"} flex flex-col gap-1`}
+      >
         <div
           className={`px-4 py-3 rounded-2xl text-sm leading-relaxed ${
             isUser
@@ -29,7 +31,10 @@ export default function ChatBubble({ message }: ChatBubbleProps) {
           {message.content}
         </div>
         <span className="text-xs text-gray-400 dark:text-gray-500 px-1">
-          {message.timestamp.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
+          {message.timestamp.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
         </span>
       </div>
     </div>

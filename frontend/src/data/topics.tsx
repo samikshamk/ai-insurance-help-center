@@ -1,6 +1,8 @@
+
 const topics = [
   {
     name: "Claims",
+    href: "/topics/claims",
     desc: "Learn how to file a claim and track your claim status.",
     bg: "bg-indigo-50",
     iconColor: "text-indigo-600",
@@ -16,6 +18,7 @@ const topics = [
   },
   {
     name: "Policies",
+    href: "/topics/policies",
     desc: "Understand your policy, coverage and benefits.",
     bg: "bg-emerald-50",
     iconColor: "text-emerald-600",
@@ -27,6 +30,7 @@ const topics = [
   },
   {
     name: "Travel Insurance",
+    href: "/topics/travel-insurance",
     desc: "Get information about travel coverage and benefits.",
     bg: "bg-violet-50",
     iconColor: "text-violet-600",
@@ -38,6 +42,7 @@ const topics = [
   },
   {
     name: "Billing & Payments",
+    href: "/topics/billing-payments",
     desc: "View payment options and manage your billing.",
     bg: "bg-amber-50",
     iconColor: "text-amber-600",
@@ -50,6 +55,7 @@ const topics = [
   },
   {
     name: "Coverage",
+    href: "/topics/coverage",
     desc: "Explore different types of coverage we offer.",
     bg: "bg-rose-50",
     iconColor: "text-rose-500",

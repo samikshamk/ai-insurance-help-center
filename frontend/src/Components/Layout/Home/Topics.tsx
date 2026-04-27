@@ -12,6 +12,7 @@ const Topics = () => {
             key={topic.name}
             className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 cursor-pointer hover:border-indigo-200 dark:hover:border-indigo-700 hover:shadow-sm transition-all group"
           >
+            <a href={topic.href}>
             <div
               className={`w-10 h-10 ${topic.bg} ${topic.iconColor} rounded-xl flex items-center justify-center mb-3`}
             >
@@ -24,6 +25,7 @@ const Topics = () => {
             <span className="text-xs font-medium text-indigo-600 dark:text-indigo-400 group-hover:underline">
               Explore →
             </span>
+            </a>
           </div>
         ))}
       </div>

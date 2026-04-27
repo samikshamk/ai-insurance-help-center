@@ -3,13 +3,22 @@ import SearchBar from "../components/UI/SearchBar";
 import ResultCard from "../components/Layout/Questions/Results";
 import FiltersDropdown from "../components/UI/Filter";
 import { allSearchResults } from "../data/Search/index";
+import { useParams } from "react-router-dom";
 
 const PAGE_SIZE = 3;
 const ALL_CATEGORIES = ["All", "Claims", "Policies", "Coverage"];
 
+type ParamTypes = {
+  question?: string;
+};
+
 export default function SearchPage() {
-  const [query, setQuery] = useState<string>("deductible");
-  const [submittedQuery, setSubmittedQuery] = useState<string>("deductible");
+  let { question } = useParams<ParamTypes>();
+  const cleanQuestion = question ? question.replace(/[- ]/g, " ") : "";
+  const [query, setQuery] = useState<string>(cleanQuestion || "");
+  const [submittedQuery, setSubmittedQuery] = useState<string>(
+    cleanQuestion || "",
+  );
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [visibleCount, setVisibleCount] = useState<number>(PAGE_SIZE);
 
@@ -49,7 +58,6 @@ export default function SearchPage() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
       <div className="max-w-2xl mx-auto px-4 py-10">
-
         {/* Search bar */}
         <SearchBar
           query={query}
@@ -59,24 +67,29 @@ export default function SearchPage() {
         />
 
         {/* Results meta row */}
-        {submittedQuery && (
-          <div className="flex items-center justify-between mt-5 mb-4">
+
+        <div className="flex flex-row-reverse items-center justify-between mt-5 mb-4">
+          <FiltersDropdown
+            selected={selectedCategory}
+            options={ALL_CATEGORIES}
+            onChange={handleCategoryChange}
+          />
+          {submittedQuery && (
             <p className="text-sm text-gray-500 dark:text-gray-400">
               About{" "}
-              <span className="font-medium text-gray-700 dark:text-gray-200">{filtered.length}</span>{" "}
+              <span className="font-medium text-gray-700 dark:text-gray-200">
+                {filtered.length}
+              </span>{" "}
               results for{" "}
-              <span className="font-medium text-gray-700 dark:text-gray-200">"{submittedQuery}"</span>
+              <span className="font-medium text-gray-700 dark:text-gray-200">
+                "{submittedQuery}"
+              </span>
             </p>
-            <FiltersDropdown
-              selected={selectedCategory}
-              options={ALL_CATEGORIES}
-              onChange={handleCategoryChange}
-            />
-          </div>
-        )}
+          )}
+        </div>
 
         {/* Result cards */}
-        <div className="flex flex-col gap-3">
+        <div className=" mt-2 flex flex-col gap-3">
           {visible.map((result) => (
             <ResultCard key={result.id} result={result} />
           ))}
@@ -85,8 +98,12 @@ export default function SearchPage() {
         {/* Empty state */}
         {filtered.length === 0 && submittedQuery && (
           <div className="text-center py-16">
-            <p className="text-gray-400 dark:text-gray-500 text-sm">No results found for "{submittedQuery}"</p>
-            <p className="text-gray-400 dark:text-gray-500 text-xs mt-1">Try a different keyword or browse topics.</p>
+            <p className="text-gray-400 dark:text-gray-500 text-sm">
+              No results found for "{submittedQuery}"
+            </p>
+            <p className="text-gray-400 dark:text-gray-500 text-xs mt-1">
+              Try a different keyword or browse topics.
+            </p>
           </div>
         )}
 
@@ -99,7 +116,6 @@ export default function SearchPage() {
             Show more results →
           </button>
         )}
-
       </div>
     </div>
   );

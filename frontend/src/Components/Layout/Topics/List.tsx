@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { ChevronRight, ChevronDown } from "lucide-react";
-import type { Article } from "../../../types/topics";
+import type { Topic } from "../../../types/topics";
 import Heading from "../../UI/Heading";
 import Description from "../../UI/Description";
 
 interface ArticleListProps {
   activeLabel: string;
-  articles: Article[];
+  articles: Topic[];
 }
 
 export default function List({ activeLabel, articles }: ArticleListProps) {

@@ -8,7 +8,12 @@ interface ChatInputProps {
   disabled?: boolean;
 }
 
-export default function ChatInput({ value, onChange, onSend, disabled }: ChatInputProps) {
+export default function ChatInput({
+  value,
+  onChange,
+  onSend,
+  disabled,
+}: ChatInputProps) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
