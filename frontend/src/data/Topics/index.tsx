@@ -2,9 +2,9 @@ import {
   Car,
   Shield,
   Plane,
-  CreditCard,
+  Landmark,
   ShieldCheck,
-  User,
+  CreditCard,
   Info,
 } from "lucide-react";
 import type { Topic } from "../../types/topics";
@@ -20,17 +20,31 @@ export const topics: Topic[] = [
         title: "CareShield and ElderShield",
         description:
           "Includes claims when the life assured requires assistance with Activities of Daily Living.",
-        subLink: {
-          id: "sl1",
-          label: "Make a CareShield or ElderShield claim",
-          href: "https://www.greateasternlife.com/sg/en/customer-services/claims/careshield-eldershield/make-a-careshield-eldershield-claim.html",
-        }
+        subLink: [
+          {
+            id: "cs1-1",
+            label: "Make a CareShield or ElderShield claim",
+            href: "https://www.greateasternlife.com/sg/en/customer-services/claims/careshield-eldershield/make-a-careshield-eldershield-claim.html",
+          },
+        ],
       },
       {
         id: "cs2",
         title: "Critical Illness",
         description:
-          "Includes claims for major critical, child- and female-related diseases.",
+          "Includes claims for major critical, child- and female-related diseases",
+        subLink: [
+          {
+            id: "cs2-1",
+            label: "Make a child-related illness claim",
+            href: "https://www.greateasternlife.com/sg/en/customer-services/claims/critical-illness/make-a-child-related-illness-claim.html",
+          },
+          {
+            id: "cs2-2",
+            label: "Make a critical illness claim",
+            href: "https://www.greateasternlife.com/sg/en/customer-services/claims/critical-illness/make-a-critical-illness-claim.html",
+          },
+        ],
       },
       {
         id: "cs3",
@@ -107,12 +121,31 @@ export const topics: Topic[] = [
         title: "Trip Cancellation",
         description:
           "Covers costs when your trip is cancelled due to unforeseen events.",
+        subLink:[
+          {
+            id: "ts1-1",
+            label: "Make a travel claim",
+            href: "https://www.greateasternlife.com/sg/en/customer-services/claims/travel/make-a-travel-claim.html",
+          },
+          {
+            id: "ts1-2",
+            label: "24-hour emergency medical assistance",
+            href: "https://www.greateasternlife.com/sg/en/customer-services/claims/travel/make-a-travel-claim1.html",
+          },
+        ]
       },
       {
         id: "ts2",
         title: "Medical Emergencies",
         description:
           "Covers overseas medical treatment and emergency evacuation.",
+        subLink:[
+          {
+            id: "ts2-1",
+            label: "24-hour emergency medical assistance",
+            href: "https://www.greateasternlife.com/sg/en/customer-services/claims/travel/make-a-travel-claim1.html",
+          },
+        ]
       },
       {
         id: "ts3",
@@ -202,29 +235,19 @@ export const topics: Topic[] = [
     ],
   },
   {
-    id: "account-profile",
-    label: "Account & Profile",
-    icon: <User size={18} />,
+    id: "loan",
+    label: "Loan",
+    icon: <Landmark size={18} />,
     subcategories: [
       {
         id: "as1",
-        title: "Personal Details",
-        description: "Update your name, address, and contact information.",
+        title: "Apply for a policy loan",
+        description: "How to take a loan from a policy with cash value",
       },
       {
         id: "as2",
-        title: "Login & Security",
-        description: "Manage your password, 2FA, and login preferences.",
-      },
-      {
-        id: "as3",
-        title: "Notifications",
-        description: "Control email, SMS, and push notification settings.",
-      },
-      {
-        id: "as4",
-        title: "Linked Accounts",
-        description: "Manage connected third-party accounts and services.",
+        title: "Repay a policy loan",
+        description: "How to pay back a borrowed sum or Automatic Premium Loan for a policy",
       },
     ],
     relatedTitle: "Account forms",
