@@ -1,20 +1,20 @@
-# 🏢 AI Insurance Help Center
+# AI Insurance Help Center
 
 A modern customer support portal that combines structured insurance knowledge with AI-powered assistance using a **React + Node.js fullstack architecture**.
 
 ---
 
-# ✨ Features
+# Features
 
-* 📚 Browse help topics
-* 🔍 Search insurance-related questions
-* 🤖 AI Assistant with contextual answers (RAG)
-* 📄 Source-based AI responses
-* 📱 Responsive UI
+* Browse help topics
+* Search insurance-related questions
+* AI Assistant with contextual answers (RAG)
+* Source-based AI responses
+* Responsive UI
 
 ---
 
-# 🏗 Architecture Overview
+# Architecture Overview
 
 This project follows a **client-server architecture** with a **Retrieval-Augmented Generation (RAG)** pipeline.
 
@@ -29,7 +29,7 @@ This project follows a **client-server architecture** with a **Retrieval-Augment
 
 ---
 
-# 🏗 Tech Stack
+# Tech Stack
 
 ## Frontend
 
@@ -54,7 +54,7 @@ This project follows a **client-server architecture** with a **Retrieval-Augment
 
 ---
 
-# ⚙️ Setup Instructions
+# Setup Instructions
 
 ## 1. Download and unzip the folder
 
@@ -97,25 +97,29 @@ npm start
 
 ---
 
-# 🚀 Future Improvements
+# Future Improvements
 
 * Chat history persistence
-* Authentication
+* User Authentication
 * Admin CMS for FAQs
+* Cloud-based data
 
 ---
 
-# 🎥 Demo
+# Demo
 
 (Include video showing:)
 
+* Home 
 * Search
 * Topic browsing
 * AI chat
+* Theme Mode
+* Responsive to mobile and website
 
 ---
 
-# 🙌 Author
+# Author
 
 Your Name
 Samiksha Moghan
