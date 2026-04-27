@@ -1,6 +1,21 @@
-import { BannerImg } from "../UI/BannerImg";
+import { BannerImg } from "../../UI/BannerImg";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    const trimmed = query.trim();
+    if (!trimmed) return;
+    navigate(`/ai-assistant?question=${encodeURIComponent(trimmed)}`);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") handleSearch();
+  };
+
   return (
     <section className="max-w-5xl mx-auto px-8 py-12 grid grid-cols-2 gap-8 items-center">
       {/* Left Content */}
@@ -25,10 +40,15 @@ const Banner = () => {
         <div className="flex gap-2">
           <input
             type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={handleKeyDown}
             placeholder="Search for answers, topics or ask a question..."
             className="flex-1 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-500 rounded-lg px-4 py-2.5 text-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 dark:focus:ring-indigo-900 transition"
           />
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors">
+          <button 
+          onClick={handleSearch}
+          className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors">
             Search
           </button>
         </div>

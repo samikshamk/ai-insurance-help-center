@@ -1,4 +1,4 @@
-import Banner from "../components/Layout/Banner"
+import Banner from "../components/Layout/Home/Banner"
 import Questions from "../components/Layout/Home/Questions"
 import Topics from "../components/Layout/Home/Topics"
 

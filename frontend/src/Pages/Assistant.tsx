@@ -9,6 +9,7 @@ import { suggested_prompt, ai_responses } from "../data/Assistant";
 import Heading from "../components/UI/Heading";
 import Description from "../components/UI/Description";
 import Avatar from "../components/UI/Avatar";
+import { useSearchParams } from "react-router-dom";
 
 function getAIResponse(message: string): string {
   const lower = message.toLowerCase();
@@ -21,6 +22,7 @@ function getAIResponse(message: string): string {
 }
 
 export default function Assistant() {
+  const [searchParams] = useSearchParams();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "welcome",
@@ -34,10 +36,20 @@ export default function Assistant() {
   const [isTyping, setIsTyping] = useState<boolean>(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const hasMessages = messages.length > 1;
+  const didAutoSend = useRef(false);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isTyping]);
+
+    // Auto-send query from URL ?question=...
+  useEffect(() => {
+    const question = searchParams.get("question");
+    if (question && !didAutoSend.current) {
+      didAutoSend.current = true;
+      sendMessage(question.trim());
+    }
+  }, []);
 
   const sendMessage = async (text: string = input) => {
     const trimmed = text.trim();
