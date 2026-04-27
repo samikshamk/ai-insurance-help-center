@@ -5,6 +5,9 @@ import SuggestedPrompts from "../components/UI/Chat/SuggestedPrompts";
 import TypingIndicator from "../components/UI/Chat/TypingIndicator";
 import type { Message } from "../types/assistant";
 import { suggested_prompt, ai_responses } from "../data/Assistant";
+import Heading from "../components/UI/Heading";
+import Description from "../components/UI/Description";
+import Avatar from "../components/UI/Avatar";
 
 function getAIResponse(message: string): string {
   const lower = message.toLowerCase();
@@ -63,12 +66,12 @@ export default function Assistant() {
   };
 
   return (
-    <div className="mx-5 mt-10flex flex-col h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
+    <div className="mx-auto mt-5 flex flex-col  h-[85vh] w-[100vw] bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
 
       {/* Header */}
       <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-4 py-3 flex items-center gap-3 flex-shrink-0">
         <div className="w-9 h-9 bg-indigo-600 rounded-xl flex items-center justify-center">
-          <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 010 2h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 010-2h1a7 7 0 017-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 012-2z" /></svg>
+          <Avatar />
         </div>
         <div>
           <p className="text-sm font-semibold text-gray-900 dark:text-white">InsureCare Assistant</p>
@@ -86,11 +89,11 @@ export default function Assistant() {
           {/* Empty state with suggested prompts */}
           {!hasMessages && (
             <div className="text-center py-10">
-              <div className="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-4 h-4 fill-white" viewBox="0 0 24 24"><path d="M12 2a2 2 0 012 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 017 7h1a1 1 0 010 2h-1v1a2 2 0 01-2 2H5a2 2 0 01-2-2v-1H2a1 1 0 010-2h1a7 7 0 017-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 012-2z" /></svg>
+              <div className="w-14 h-14 bg-indigo-50 dark:bg-indigo-950 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <Avatar />
               </div>
-              <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">How can I help you today?</p>
-              <p className="text-xs text-gray-400 dark:text-gray-500 mb-6">Ask me anything about your insurance</p>
+              <Heading title="How can I help you today?"/>
+              <Description content="Ask me anything about your insurance" />
               <SuggestedPrompts prompts={suggested_prompt} onSelect={sendMessage} />
             </div>
           )}
@@ -123,9 +126,7 @@ export default function Assistant() {
             onSend={() => sendMessage()}
             disabled={isTyping}
           />
-          <p className="text-center text-xs text-gray-400 dark:text-gray-500 mt-2">
-            AI responses are for guidance only. For complex matters, please contact our team.
-          </p>
+          <Description content="AI responses are for guidance only. For complex matters, please contact our team." style="text-center" />
         </div>
       </div>
 

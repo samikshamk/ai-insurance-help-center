@@ -8,7 +8,7 @@ const Navbar = () => {
   const { isDark, toggleDark } = useTheme();
 
   return (
-    <nav className="bg-white border-b border-gray-200 px-8 flex items-center justify-between h-14 sticky top-0 z-50">
+    <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-8 flex items-center justify-between h-14 sticky top-0 z-50">
       <Logo />
 
       {/* Nav Links */}
@@ -20,8 +20,8 @@ const Navbar = () => {
             className={({ isActive }) =>
               `text-sm transition-colors ${
                 isActive
-                  ? "text-indigo-600 font-medium border-b-2 border-indigo-600 pb-0.5"
-                  : "text-gray-500 hover:text-gray-800"
+                  ? "text-indigo-600 dark:text-indigo-400 font-medium border-b-2 border-indigo-600 pb-0.5"
+                  : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-300"
               }`
             }
           >
@@ -30,7 +30,7 @@ const Navbar = () => {
         ))}
       </ul>
 
-      {/* Sign In */}
+      {/* Theme Toggle */}
       <button
         onClick={toggleDark}
         className="w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
