@@ -1,4 +1,4 @@
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu } from "lucide-react";
 import type { Topic } from "../../../types/topics";
 
 interface MobileTopBarProps {
@@ -20,7 +20,6 @@ export default function MobileTopBar({ activeTopic, onOpenDrawer }: MobileTopBar
       <div className="flex items-center gap-1.5 bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 text-xs font-medium px-3 py-1.5 rounded-full">
         <span className="text-indigo-500">{activeTopic?.icon}</span>
         <span>{activeTopic?.label}</span>
-        <ChevronDown size={13} />
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ app.use(express.json());
 (async () => {
   console.log("Initializing vector store...");
   await initVectorStore();
-  console.log("Ready 🚀");
+  console.log("Ready to accept chat requests");
 })();
 
 // ---- CHAT API ----
