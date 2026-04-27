@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import ChatBubble from "../components/Layout/Assistant/ChatBubble";
 import ChatInput from "../components/Layout/Assistant/ChatInput";
+import { sendChatMessage } from "../components/Layout/Assistant/ChatApi";
 import SuggestedPrompts from "../components/UI/Chat/SuggestedPrompts";
 import TypingIndicator from "../components/UI/Chat/TypingIndicator";
 import type { Message } from "../types/assistant";
@@ -38,7 +39,7 @@ export default function Assistant() {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isTyping]);
 
-  const sendMessage = (text: string = input) => {
+  const sendMessage = async (text: string = input) => {
     const trimmed = text.trim();
     if (!trimmed || isTyping) return;
 
@@ -53,16 +54,25 @@ export default function Assistant() {
     setInput("");
     setIsTyping(true);
 
-    setTimeout(() => {
-      const aiMsg: Message = {
-        id: crypto.randomUUID(),
-        role: "assistant",
-        content: getAIResponse(trimmed),
-        timestamp: new Date(),
-      };
-      setMessages((prev) => [...prev, aiMsg]);
+        try {
+      const reply = await sendChatMessage(trimmed);
+      setMessages(p => [...p, { id: crypto.randomUUID(), role: "assistant", content: reply, timestamp: new Date() }]);
+    } catch (err) {
+      console.log("Unable to reach the server. Please check your connection and try again.");
+    } finally {
       setIsTyping(false);
-    }, 1200);
+    }
+
+    // setTimeout(() => {
+    //   const aiMsg: Message = {
+    //     id: crypto.randomUUID(),
+    //     role: "assistant",
+    //     content: getAIResponse(trimmed),
+    //     timestamp: new Date(),
+    //   };
+    //   setMessages((prev) => [...prev, aiMsg]);
+    //   setIsTyping(false);
+    // }, 1200);
   };
 
   return (
