@@ -19,7 +19,7 @@ export default function TopicsPage() {
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-50 relative">
+    <div className="flex min-h-screen bg-gray-50 dark:bg-gray-950 relative">
 
       {/* Desktop sidebar */}
       <Sidebar

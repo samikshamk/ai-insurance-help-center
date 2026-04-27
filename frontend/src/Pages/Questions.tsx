@@ -47,7 +47,7 @@ export default function SearchPage() {
   const hasMore = visibleCount < filtered.length;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
       <div className="max-w-2xl mx-auto px-4 py-10">
 
         {/* Search bar */}
@@ -61,11 +61,11 @@ export default function SearchPage() {
         {/* Results meta row */}
         {submittedQuery && (
           <div className="flex items-center justify-between mt-5 mb-4">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               About{" "}
-              <span className="font-medium text-gray-700">{filtered.length}</span>{" "}
+              <span className="font-medium text-gray-700 dark:text-gray-200">{filtered.length}</span>{" "}
               results for{" "}
-              <span className="font-medium text-gray-700">"{submittedQuery}"</span>
+              <span className="font-medium text-gray-700 dark:text-gray-200">"{submittedQuery}"</span>
             </p>
             <FiltersDropdown
               selected={selectedCategory}
@@ -85,8 +85,8 @@ export default function SearchPage() {
         {/* Empty state */}
         {filtered.length === 0 && submittedQuery && (
           <div className="text-center py-16">
-            <p className="text-gray-400 text-sm">No results found for "{submittedQuery}"</p>
-            <p className="text-gray-400 text-xs mt-1">Try a different keyword or browse topics.</p>
+            <p className="text-gray-400 dark:text-gray-500 text-sm">No results found for "{submittedQuery}"</p>
+            <p className="text-gray-400 dark:text-gray-500 text-xs mt-1">Try a different keyword or browse topics.</p>
           </div>
         )}
 
@@ -94,7 +94,7 @@ export default function SearchPage() {
         {hasMore && (
           <button
             onClick={() => setVisibleCount((c) => c + PAGE_SIZE)}
-            className="w-full mt-6 text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center justify-center gap-1.5 transition-colors"
+            className="w-full mt-6 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 flex items-center justify-center gap-1.5 transition-colors"
           >
             Show more results →
           </button>

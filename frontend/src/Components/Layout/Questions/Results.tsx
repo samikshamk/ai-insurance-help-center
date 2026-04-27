@@ -10,14 +10,14 @@ export default function Results({ result }: ResultCardProps) {
   return (
     <a
       href={result.href}
-      className="flex items-center justify-between gap-4 bg-white border border-gray-200 rounded-xl px-5 py-4 hover:border-indigo-200 hover:shadow-sm active:bg-gray-50 transition-all group"
+      className="flex items-center justify-between gap-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-5 py-4 hover:border-indigo-200 dark:hover:border-indigo-700 hover:shadow-sm transition-all group"
     >
       {/* Text */}
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-indigo-600 group-hover:text-indigo-700 mb-1.5 leading-snug">
+        <p className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-700 dark:group-hover:text-indigo-300 mb-1.5 leading-snug">
           {result.question}
         </p>
-        <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">
+        <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
           {result.description}
         </p>
       </div>

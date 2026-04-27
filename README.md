@@ -6,10 +6,9 @@ A modern customer support portal that combines structured insurance knowledge wi
 
 # ✨ Features
 
-* 🔍 Search insurance-related questions
 * 📚 Browse help topics
+* 🔍 Search insurance-related questions
 * 🤖 AI Assistant with contextual answers (RAG)
-* 🔁 Follow-up conversations
 * 📄 Source-based AI responses
 * 📱 Responsive UI
 
@@ -42,11 +41,11 @@ This project follows a **client-server architecture** with a **Retrieval-Augment
 
 * Node.js (Express)
 * TypeScript
+* Axios
 
 ## AI / RAG
 
 * OpenRouter (LLM + embeddings)
-* Cosine similarity-based retrieval
 
 ## Data
 
@@ -57,12 +56,7 @@ This project follows a **client-server architecture** with a **Retrieval-Augment
 
 # ⚙️ Setup Instructions
 
-## 1. Clone repo
-
-```bash id="r4h7mp"
-git clone https://github.com/your-repo/ai-insurance-help-center.git
-cd ai-insurance-help-center
-```
+## 1. Download and unzip the folder
 
 ---
 
@@ -70,27 +64,22 @@ cd ai-insurance-help-center
 
 ### Frontend
 
-```bash id="czwd3y"
 cd frontend
 npm install
-```
 
 ### Backend
 
-```bash id="wz1xk6"
 cd backend
 npm install
-```
 
 ---
 
 ## 3. Environment variables
 
-Create `.env` in backend:
+Create `.env` in backend folder:
+get your api key and add into 
 
-```env id="h03h9g"
 OPENROUTER_API_KEY=your_api_key
-```
 
 ---
 
@@ -98,49 +87,18 @@ OPENROUTER_API_KEY=your_api_key
 
 ### Backend
 
-```bash id="m9d9og"
 cd backend
 npm run dev
-```
 
 ### Frontend
 
-```bash id="4t6fy2"
 cd frontend
 npm start
-```
-
----
-
-# 🤖 AI Integration (RAG)
-
-* Embeddings generated via OpenRouter
-* Semantic search using cosine similarity
-* Top-k documents used as context
-* LLM generates grounded answers
-
----
-
-# 📊 Tradeoffs & Decisions
-
-## Why React instead of Next.js?
-
-* Simpler setup for SPA-based help center
-* Clear separation between frontend and backend
-* More control over API and AI orchestration
-
----
-
-## Tradeoffs
-
-* No SSR (not critical for this use case)
-* In-memory vector store (not scalable yet)
 
 ---
 
 # 🚀 Future Improvements
 
-* Add vector DB (Pinecone / Supabase)
 * Chat history persistence
 * Authentication
 * Admin CMS for FAQs
@@ -160,4 +118,4 @@ npm start
 # 🙌 Author
 
 Your Name
-GitHub: your-link
+Samiksha Moghan

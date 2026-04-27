@@ -12,7 +12,7 @@ export default function SuggestedPrompts({ prompts, onSelect }: SuggestedPrompts
         <button
           key={p.id}
           onClick={() => onSelect(p.label)}
-          className="text-xs font-medium text-indigo-600 bg-indigo-50 hover:bg-indigo-100 border border-indigo-100 px-3 py-1.5 rounded-full transition-colors"
+          className="text-xs font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950 hover:bg-indigo-100 dark:hover:bg-indigo-900 border border-indigo-100 dark:border-indigo-800 px-3 py-1.5 rounded-full transition-colors"
         >
           {p.label}
         </button>

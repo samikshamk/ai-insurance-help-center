@@ -28,7 +28,7 @@ export default function ChatInput({ value, onChange, onSend, disabled }: ChatInp
   };
 
   return (
-    <div className="flex items-end gap-3 bg-white border border-gray-200 rounded-2xl px-4 py-3 focus-within:border-indigo-400 focus-within:ring-2 focus-within:ring-indigo-100 transition">
+    <div className="flex items-end gap-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl px-4 py-3 focus-within:border-indigo-400 focus-within:ring-2 focus-within:ring-indigo-100 dark:focus-within:ring-indigo-900 transition">
       <textarea
         ref={textareaRef}
         value={value}
@@ -37,12 +37,12 @@ export default function ChatInput({ value, onChange, onSend, disabled }: ChatInp
         disabled={disabled}
         placeholder="Ask me anything about your insurance..."
         rows={1}
-        className="flex-1 resize-none text-sm text-gray-700 placeholder:text-gray-400 outline-none bg-transparent leading-relaxed max-h-28"
+        className="flex-1 resize-none text-sm text-gray-700 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-500 outline-none bg-transparent leading-relaxed max-h-28"
       />
       <button
         onClick={onSend}
         disabled={disabled || !value.trim()}
-        className="w-8 h-8 bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-200 disabled:cursor-not-allowed rounded-xl flex items-center justify-center transition-colors flex-shrink-0"
+        className="w-8 h-8 bg-indigo-600 hover:bg-indigo-700 disabled:bg-gray-200 dark:disabled:bg-gray-700 disabled:cursor-not-allowed rounded-xl flex items-center justify-center transition-colors flex-shrink-0"
       >
         <Send size={14} className="text-white" />
       </button>

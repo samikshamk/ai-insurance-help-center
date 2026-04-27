@@ -28,18 +28,18 @@ export default function Drawer({
 
       {/* Slide-in panel */}
       <div
-        className={`fixed top-0 left-0 h-full w-72 bg-white z-40 shadow-2xl transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 left-0 h-full w-72 bg-white dark:bg-gray-900 z-40 shadow-2xl transition-transform duration-300 ease-in-out md:hidden ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100">
-          <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 dark:border-gray-700">
+          <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider">
             All Topics
           </p>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-md hover:bg-gray-100"
+            className="text-gray-400 hover:text-gray-600 dark:hover:text-white p-1 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             <X size={18} />
           </button>
@@ -55,11 +55,11 @@ export default function Drawer({
                 onClick={() => onSelect(topic.id)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm w-full text-left transition-colors ${
                   isActive
-                    ? "bg-indigo-50 text-indigo-600 font-medium"
-                    : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                    ? "bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 font-medium"
+                    : "text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white"
                 }`}
               >
-                <span className={isActive ? "text-indigo-500" : "text-gray-400"}>
+                <span className={isActive ? "text-indigo-500" : "text-gray-400 dark:text-gray-500"}>
                   {topic.icon}
                 </span>
                 <span className="flex-1">{topic.label}</span>

@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
 import Logo from "../UI/Logo";
 import Menu from "../../config/Menu";
+import { Sun, Moon } from "lucide-react";
+import { useTheme } from "../../context/ThemeContext";
 
 const Navbar = () => {
+  const { isDark, toggleDark } = useTheme();
 
   return (
     <nav className="bg-white border-b border-gray-200 px-8 flex items-center justify-between h-14 sticky top-0 z-50">
@@ -28,8 +31,16 @@ const Navbar = () => {
       </ul>
 
       {/* Sign In */}
-      <button className="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors">
-        Sign in
+      <button
+        onClick={toggleDark}
+        className="w-9 h-9 flex items-center justify-center rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+        aria-label="Toggle dark mode"
+      >
+        {isDark ? (
+          <Sun size={16} className="text-yellow-400" />
+        ) : (
+          <Moon size={16} className="text-gray-600" />
+        )}
       </button>
     </nav>
   );
